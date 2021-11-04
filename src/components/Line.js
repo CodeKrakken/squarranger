@@ -1,13 +1,18 @@
 import Checkbox from "./Checkbox";
 
 const Line = () => {
-  let length = [...Array(4)]
+
+  let boxes = [true, false, true, false]
+  let length = [...boxes]
   let id = 0
   return (
-    length.map(checkbox => {
+    length.map(box => {
       id ++
       return (
-        <Checkbox key={id} />
+        <Checkbox
+          key={id}
+          checked={box}
+        />
       )
     })
   )
