@@ -1,9 +1,9 @@
-import Checkbox from "./components/Checkbox";
+import Line from "./components/Line";
 
 function App() {
   return (
     <div className="App">
-      <Checkbox />
+      <Line />
     </div>
   );
 }

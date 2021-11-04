@@ -1,8 +1,7 @@
 const Checkbox = () => {
+
   return (
-    <div>
-      I am the checkbox
-    </div>
+    <input type="checkbox" />
   
   );
 }
