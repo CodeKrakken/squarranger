@@ -5,21 +5,20 @@ import { Context } from '../contexts/Context'
 const Line = () => {
 
   const context = useContext(Context)
-  console.log(context)
 
-  let length = [...context.boxes]
   let id = 0
-  return (
-    length.map(box => {
+  return context && context.state && context.state.boxes ? (
+    context.state.boxes.map(box => {
       id ++
       return (
         <Checkbox
           key={id}
           checked={box}
+
         />
       )
     })
-  )
+  ) : ''
 }
  
 export default Line;
