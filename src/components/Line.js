@@ -1,9 +1,13 @@
 import Checkbox from "./Checkbox";
+import { useContext } from "react";
+import { Context } from '../contexts/Context'
 
 const Line = () => {
 
-  let boxes = [true, false, true, false]
-  let length = [...boxes]
+  const context = useContext(Context)
+  console.log(context)
+
+  let length = [...context.boxes]
   let id = 0
   return (
     length.map(box => {

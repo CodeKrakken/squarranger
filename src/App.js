@@ -1,9 +1,12 @@
 import Line from "./components/Line";
+import ContextProvider from './contexts/Context'
 
 function App() {
   return (
     <div className="App">
-      <Line />
+      <ContextProvider>
+        <Line />
+      </ContextProvider>
     </div>
   );
 }
