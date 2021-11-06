@@ -11,13 +11,8 @@ const ContextProvider = (props) => {
 
   const [state, setState] = useState(data)
   
-
-  const toggleState = (index) => {
-    setState({ })
-  }
-
   return (
-    <Context.Provider value={{state, toggleState}}>
+    <Context.Provider value={{state, setState}}>
       {props.children}
     </Context.Provider>
   )

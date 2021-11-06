@@ -1,18 +1,16 @@
 import { useState, useContext } from "react";
 import { Context } from '../contexts/Context'
 
-const Checkbox = (data) => {
+const Checkbox = ({checked, index}) => {
 
   const context = useContext(Context)
 
-  data.key && console.log(data)
-
-
   return (
-    <input type="checkbox" defaultChecked={data.checked} onChange={e => {
-      // setState(e.target.checked);
-      // console.log(e.target.checked)
-      context.setState(e.target.checked)
+    <input type="checkbox" defaultChecked={checked} onChange={e => {
+
+      context.state.boxes[index-1] = !context.state.boxes[index-1]
+      context.setState({ boxes: context.state.boxes })
+
     }} />
   );
 }
