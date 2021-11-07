@@ -10,12 +10,13 @@ const Play = () => {
   const [play] = useSound(drumHit);
 
   const iterate = (beats, i=0) => {
+    console.log(beats)
     if (beats[i]) { play() }
     if (i<beats.length){
        setTimeout(() => {
            i++;
            play(beats, i);
-       },1000);
+       },2000);
     }
   }
 
