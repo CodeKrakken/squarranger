@@ -1,18 +1,18 @@
 import { useContext } from "react";
 import { Context } from '../contexts/Context'
+import useSound from 'use-sound';
+import drumHit from '../sounds/drumHit.mp3';
 
 const Play = () => {
 
   const context = useContext(Context)
 
-  var a = [
-    1,2,3,4,5,6,7,8,9,10
-    ];
+  const [play] = useSound(drumHit);
 
-  const play = (beats, i=0) => {
-    if (beats[i]) { console.log('BANG!') }
+  const iterate = (beats, i=0) => {
+    if (beats[i]) { play() }
     if (i<beats.length){
-       setTimeout(function(){
+       setTimeout(() => {
            i++;
            play(beats, i);
        },1000);
@@ -21,7 +21,7 @@ const Play = () => {
 
   const handleClick = (e) => {
     console.log('Playing')
-    play(context.state.boxes)
+    iterate(context.state.boxes)
   }
 
   return ( 
