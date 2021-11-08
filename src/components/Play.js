@@ -10,8 +10,10 @@ const Play = () => {
   const [play] = useSound(drumHit);
 
   const iterate = (beats, i=0) => {
-    console.log(beats)
-    if (beats[i]) { play() }
+    console.log(i)
+    if (beats[i]) { 
+      console.log(`Played ${i}`)
+      play() }
     if (i<beats.length){
        setTimeout(() => {
            i++;
