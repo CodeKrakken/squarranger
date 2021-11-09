@@ -6,8 +6,8 @@ const Line = ({index}) => {
 
   const context = useContext(Context)
 
-  return context && context.state && context.state.boxes ? (
-    context.state.boxes[index].map((box, i) => {
+  return context && context.state && context.state.lines ? (
+    context.state.lines[index].map((box, i) => {
 
         let id = i+1
         return (

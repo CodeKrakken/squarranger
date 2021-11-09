@@ -7,17 +7,19 @@ const Matrix = () => {
   const context = useContext(Context)
   console.log(context)
   
-  return context ? (
+  return context && context.state && context.state.lines ? (
     context.state.lines.map((line, i) => {
 
       let id = i+1
 
       return (
-        <Line 
-          key={id}
-          index={id-1}
-          boxes={line}
-        />
+        <div>
+          <Line 
+            key={id}
+            index={i}
+            boxes={line}
+          />
+        </div> 
       )
     })
   ) : '';

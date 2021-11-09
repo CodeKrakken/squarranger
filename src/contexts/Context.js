@@ -6,7 +6,10 @@ export const Context = createContext()
 const ContextProvider = (props) => {
 
   const data = {
-    lines: [[true, true, true, true, true, true, true, true, true, true]]
+    lines: [
+      [true, false, false, false, true, true, false, false],
+      [false, false, true, false, false, false, true, false]
+    ]
   }
 
   const [state, setState] = useState(data)

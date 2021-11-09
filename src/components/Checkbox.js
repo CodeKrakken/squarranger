@@ -8,8 +8,8 @@ const Checkbox = ({checked, index}) => {
   return (
     <input type="checkbox" defaultChecked={checked} onChange={e => {
 
-      context.state.boxes[index-1] = !context.state.boxes[index-1]
-      context.setState({ boxes: context.state.boxes })
+      context.state.lines[index-1] = !context.state.lines[index-1]
+      context.setState({ boxes: context.state.lines })
 
     }} />
   );
