@@ -10,32 +10,21 @@ const Play = () => {
   const [playKick] = useSound(kick);
   const [playSnare] = useSound(snare)
 
-  const play = (matrix, i=0) => {
+  const play = (beats, beat=0) => {
 
-    for (let voice in matrix) {
-
-      console.log(voice)
-
-      if (matrix[voice][i]) { 
-        playKick();
-        playSnare();
-        console.log('BANG!') }
-
-    }
-    
-      
-
-
-
-
-      if (i<matrix.length){
-        setTimeout(function(){
-            i++;
-            play(matrix, i);
-        },1000);
+    for (let voice = 0; voice < beats.length; voice++) {
+      if (beats[voice][beat]) { 
+        console.log(`Playing ${voice}`)
+        playKick()
       }
+    }
 
-
+    if (beat<beats.length){
+      setTimeout(function(){
+          beat++;
+          play(beats, beat);
+      },1000);
+    }
   }
 
   const handleClick = (e) => {

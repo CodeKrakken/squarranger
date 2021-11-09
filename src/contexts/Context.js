@@ -6,7 +6,7 @@ export const Context = createContext()
 const ContextProvider = (props) => {
 
   const data = {
-    boxes: [true, true, true, true, true, true, true, true, true, true]
+    lines: [[true, true, true, true, true, true, true, true, true, true]]
   }
 
   const [state, setState] = useState(data)
