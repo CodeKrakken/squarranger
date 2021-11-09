@@ -22,11 +22,13 @@ const Play = () => {
       }
     }
 
-    if (i<matrix.length){
+    if (i<matrix[0].length){
       setTimeout(function(){
         i++;
         play(matrix, i);
-      },1000);
+      },500);
+    } else {
+      console.log(i)
     }
   }
 
