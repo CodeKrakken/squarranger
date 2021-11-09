@@ -13,7 +13,7 @@ const Matrix = () => {
       let id = i+1
 
       return (
-        <div>
+        <div key={id}>
           <Line 
             key={id}
             index={i}
