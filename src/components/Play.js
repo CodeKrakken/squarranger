@@ -13,11 +13,10 @@ const Play = () => {
 
   const play = (matrix, i=0) => {
 
-    for (let voice in matrix) {
+    for (let voice in matrix) {voice = +voice
 
       if (matrix[voice][i]) { 
-        playKick();
-        playSnare();
+        playVoice(voice)
         console.log(`Playing ${voice} ${i}`)
       }
     }
@@ -30,6 +29,11 @@ const Play = () => {
     } else {
       console.log(i)
     }
+  }
+
+  const playVoice = (i) => {
+    if (i === 0) { playKick() }
+    if (i === 1) { playSnare() }
   }
 
   const handleClick = (e) => {
