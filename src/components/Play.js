@@ -6,25 +6,23 @@ import drumHit from '../sounds/drumHit.mp3';
 const Play = () => {
 
   const context = useContext(Context)
+  const [makeSound] = useSound(drumHit);
 
-  const [play] = useSound(drumHit);
-
-  const iterate = (beats, i=0) => {
-    console.log(i)
+  const play = (beats, i=0) => {
     if (beats[i]) { 
-      console.log(`Played ${i}`)
-      play() }
+      makeSound();
+      console.log('BANG!') }
     if (i<beats.length){
-       setTimeout(() => {
+       setTimeout(function(){
            i++;
            play(beats, i);
-       },2000);
+       },1000);
     }
   }
 
   const handleClick = (e) => {
     console.log('Playing')
-    iterate(context.state.boxes)
+    play(context.state.boxes)
   }
 
   return ( 
