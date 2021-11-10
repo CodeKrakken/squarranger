@@ -15,6 +15,7 @@ const Voice = ({voiceId}) => {
             key={id}
             index={id}
             checkStatus={box}
+            voiceId={voiceId}
           />
         )
     }
