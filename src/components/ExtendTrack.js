@@ -7,7 +7,8 @@ const ExtendTrack = () => {
   const handleSubmit = (e) => {
 
     for (let i = 0; i < context.state.voices.length; i++) {
-      context.state.voices[i].push(false)
+      let status = Math.round(Math.random())
+      context.state.voices[i].push(status)
     }
     context.setState({ voices: context.state.voices })
 

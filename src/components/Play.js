@@ -24,7 +24,7 @@ const Play = () => {
       setTimeout(function(){
         i++;
         play(matrix, i);
-      },250);
+      },125);
     }
   }
 
