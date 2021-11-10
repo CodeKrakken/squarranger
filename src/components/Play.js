@@ -7,7 +7,7 @@ import snare from '../sounds/snare.mp3'
 const Play = () => {
 
   const context = useContext(Context)
-  const matrix = context.state.lines
+  const matrix = context.state.voices
   const [playKick] = useSound(kick);
   const [playSnare] = useSound(snare)
 
@@ -17,7 +17,6 @@ const Play = () => {
 
       if (matrix[voice][i]) { 
         playVoice(voice)
-        console.log(`Playing ${voice} ${i}`)
       }
     }
 
@@ -25,9 +24,7 @@ const Play = () => {
       setTimeout(function(){
         i++;
         play(matrix, i);
-      },500);
-    } else {
-      console.log(i)
+      },250);
     }
   }
 
@@ -37,8 +34,7 @@ const Play = () => {
   }
 
   const handleClick = (e) => {
-    console.log('Playing')
-    play(context.state.lines)
+    play(context.state.voices)
   }
 
   return ( 

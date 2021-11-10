@@ -1,21 +1,17 @@
 import { Context } from '../contexts/Context'
 import { useContext } from 'react' 
 
-const Extend = () => {
+const ExtendTrack = () => {
   
   const context = useContext(Context)
-
-  console.log(context)
-
   const handleSubmit = (e) => {
 
-    for (let i = 0; i < context.state.lines.length; i++) {
-      context.state.lines[i].push(false)
+    for (let i = 0; i < context.state.voices.length; i++) {
+      context.state.voices[i].push(false)
     }
-    context.setState({ lines: context.state.lines })
+    context.setState({ voices: context.state.voices })
 
   }
-  
   
   return context ? ( 
     <button
@@ -26,4 +22,4 @@ const Extend = () => {
    ) : '';
 }
  
-export default Extend;
+export default ExtendTrack;
