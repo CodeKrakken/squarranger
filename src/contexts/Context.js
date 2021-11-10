@@ -6,10 +6,7 @@ export const Context = createContext()
 const ContextProvider = (props) => {
 
   const data = {
-    voices: [
-      [true, false, false, false, true, false, false, false],
-      [false, false, true, false, false, true, true, false]
-    ]
+    voices: []
   }
 
   const [state, setState] = useState(data)
