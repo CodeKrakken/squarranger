@@ -5,7 +5,6 @@ import { Context } from '../contexts/Context'
 const Matrix = () => {
   
   const context = useContext(Context)
-  console.log(context)
   
   return context && context.state && context.state.lines ? (
     context.state.lines.map((line, i) => {

@@ -8,7 +8,12 @@ const Extend = () => {
   console.log(context)
 
   const handleSubmit = (e) => {
-    
+
+    for (let i = 0; i < context.state.lines.length; i++) {
+      context.state.lines[i].push(false)
+    }
+    context.setState({ lines: context.state.lines })
+
   }
   
   
