@@ -32,8 +32,8 @@ const Play = () => {
   }
 
   const playVoice = (i) => {
-    if (i === 0) { playKick() }
-    if (i === 1) { playSnare() }
+    let voices = [playKick, playSnare]
+    voices[i]()
   }
 
   const handleClick = (e) => {

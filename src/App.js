@@ -1,5 +1,6 @@
 import Matrix from "./components/Matrix";
 import Play from "./components/Play";
+import Extend from './components/Extend';
 import ContextProvider from './contexts/Context'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <ContextProvider>
         <Matrix />
         <Play />
+        <Extend />
       </ContextProvider>
     </div>
   );
