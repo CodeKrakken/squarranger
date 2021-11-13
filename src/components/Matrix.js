@@ -17,7 +17,7 @@ const Matrix = () => {
     }
     context.setState({ voices: context.state.voices })
   }, [])
-  
+   
   return context && context.state && context.state.voices ? (
     context.state.voices.map((voice, i) => {
 
