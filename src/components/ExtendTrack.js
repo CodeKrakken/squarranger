@@ -18,7 +18,7 @@ const ExtendTrack = () => {
     <button
       onClick={handleSubmit}
     >
-      +
+      Extend Track
     </button>
    ) : '';
 }

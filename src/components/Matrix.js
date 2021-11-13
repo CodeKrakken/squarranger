@@ -17,7 +17,7 @@ const Matrix = () => {
       context.state.voices.push(voiceData)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    context.setState({ voices: context.state.voices })}, [])
+    context.setState({ voices: context.state.voices, customVoices: context.state.customVoices })}, [])
   
   if (context && context.state && context.state.voices) {
     let voices = context.state.voices.map((voice, i) => {
