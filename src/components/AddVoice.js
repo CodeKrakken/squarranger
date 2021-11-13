@@ -14,7 +14,11 @@ const AddVoice = () => {
     }
 
     context.state.customVoices.push(newVoice)
-    context.setState({ customVoices: context.state.customVoices })
+    context.setState({ 
+      voices:       context.state.voices,
+      customVoices: context.state.customVoices 
+    })
+    console.log('Set state')
   }
   
   return context ? ( 
