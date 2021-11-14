@@ -1,7 +1,7 @@
 import Voice from "./Voice"
 import { useContext, useEffect } from "react"
 import { Context } from '../contexts/Context'
-import CustomVoice from './CustomVoice'
+import AddSample from "./AddSample"
 
 const Matrix = () => {
   
@@ -17,7 +17,7 @@ const Matrix = () => {
       context.state.voices.push(voiceData)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    context.setState({ voices: context.state.voices, customVoices: context.state.customVoices })}, [])
+    context.setState({ voices: context.state.voices })}, [])
   
   if (context && context.state && context.state.voices) {
     let voices = context.state.voices.map((voice, i) => {
@@ -35,26 +35,8 @@ const Matrix = () => {
       )
     })
 
-    if (context && context.state && context.state.customVoices) {
-      let customVoices = context.state.customVoices.map((voice, i) => {
-        
-        let voiceId = i
-        
-        let key = i + context.state.voices.length
-
-        return (
-          <div key={key}>
-            <CustomVoice
-              key={key}
-              voiceId={voiceId}
-              boxes={voice}
-            />
-          </div>
-        )
-      })
-      voices.push(customVoices)
-    }
-    return voices.flat()
+    
+    return voices
   };
 
 }

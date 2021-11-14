@@ -29,8 +29,10 @@ const Play = () => {
   }
 
   const playVoice = (i) => {
-    let voices = [playKick, playSnare]
-    voices[i]()
+    if (i < 2) {
+      let voices = [playKick, playSnare]
+      voices[i]()
+    }
   }
 
   const handleClick = (e) => {

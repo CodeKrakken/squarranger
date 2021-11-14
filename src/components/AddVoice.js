@@ -12,12 +12,11 @@ const AddVoice = () => {
       newVoice.push(Math.round(Math.random()))
     }
 
-    context.state.customVoices.push(newVoice)
+    context.state.voices.push(newVoice)
     context.setState({ 
-      voices:       context.state.voices,
-      customVoices: context.state.customVoices 
+      voices: context.state.voices,
+      sounds: context.state.sounds
     })
-    console.log(context)
   }
   
   return context ? ( 

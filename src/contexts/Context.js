@@ -7,7 +7,7 @@ const ContextProvider = (props) => {
 
   const data = {
     voices: [],
-    customVoices: []
+    sounds: []
   }
 
   const [state, setState] = useState(data)

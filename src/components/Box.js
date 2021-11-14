@@ -11,7 +11,7 @@ const Box = ({checkStatus, index, voiceId}) => {
       context.state.voices[voiceId][index-1] = !context.state.voices[voiceId][index-1]
       context.setState({ 
         voices:       context.state.voices,
-        customVoices: context.state.customVoices 
+        sounds: context.state.sounds
       })
     }} />
   );

@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <ContextProvider>
-        <Matrix />
         <ExtendTrack style={{display: 'inline'}} />
         <AddVoice style={{display: 'inline'}} />
         <Play />
+        <Matrix />
       </ContextProvider>
     </div>
   );
