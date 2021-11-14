@@ -14,11 +14,15 @@ const Matrix = () => {
         let status = Math.round(Math.random())
         voiceData.push(status)
       }
+      let sound = Math.floor(Math.random() * context.state.soundBank.length-1)
       context.state.voices.push(voiceData)
+      context.state.sounds.push(sound)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    context.setState({ voices: context.state.voices })}, [])
-  
+    context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
+
+  }, [])
+    
   if (context && context.state && context.state.voices) {
     let voices = context.state.voices.map((voice, i) => {
 
@@ -26,6 +30,7 @@ const Matrix = () => {
 
       return (
         <div key={voiceId}>
+          <AddSample />
           <Voice 
             key={voiceId}
             voiceId={voiceId}

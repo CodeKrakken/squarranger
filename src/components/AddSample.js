@@ -9,10 +9,8 @@ const AddSample = () => {
   const changeHandler = (event) => {
 
 		context.sounds.push(event.target.files[0]);
-    context.setState({ 
-      voices:       context.state.voices,
-      sounds: context.state.sounds
-    })
+    context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
+
 	};
 
   return (

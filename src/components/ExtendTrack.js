@@ -11,10 +11,8 @@ const ExtendTrack = () => {
       context.state.voices[i].push(status)
     }
 
-    context.setState({ 
-      voices: context.state.voices,
-      sounds: context.state.sounds
-    })
+    context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
+
 
   }
   

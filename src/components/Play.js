@@ -1,42 +1,42 @@
 import { useContext } from "react";
 import { Context } from '../contexts/Context'
 import useSound from 'use-sound';
-import kick from '../sounds/kick.mp3';
-import snare from '../sounds/snare.mp3'
 
 const Play = () => {
 
   const context = useContext(Context)
-  const matrix = context.state.voices
-  const [playKick] = useSound(kick);
-  const [playSnare] = useSound(snare)
+  // const state.voices = context.state.voices
+  const [playKick] = useSound(context.state.soundBank.kick);
+  const [playSnare] = useSound(context.state.soundBank.snare);
 
-  const play = (matrix, i=0) => {
+  const play = (state, i=0) => {
 
-    for (let voice in matrix) {voice = +voice
+    console.log(state)
 
-      if (matrix[voice][i]) { 
-        playVoice(voice)
+    for (let voice in state.voices) {voice = +voice
+
+      if (state.voices[voice][i]) { 
+        playVoice(state, voice)
       }
     }
 
-    if (i<matrix[0].length){
+    if (i<state.voices[0].length){
       setTimeout(function(){
         i++;
-        play(matrix, i);
+        play(state, i);
       },125);
     }
   }
 
-  const playVoice = (i) => {
-    if (i < 2) {
-      let voices = [playKick, playSnare]
+  const playVoice = (state, i) => {
+    if (i < state.soundBank.length) {
+      let voices = state.soundBank
       voices[i]()
     }
   }
 
   const handleClick = (e) => {
-    play(context.state.voices)
+    play(context.state)
   }
 
   return ( 
