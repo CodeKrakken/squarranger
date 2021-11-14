@@ -10,7 +10,10 @@ const ExtendTrack = () => {
       let status = Math.round(Math.random())
       context.state.voices[i].push(status)
     }
-    context.setState({ voices: context.state.voices })
+    context.setState({ 
+      voices:       context.state.voices,
+      customVoices: context.state.customVoices 
+    })
 
   }
   

@@ -9,7 +9,10 @@ const Box = ({checkStatus, index, voiceId}) => {
     <input type="checkbox" defaultChecked={checkStatus} onChange={e => {
 
       context.state.voices[voiceId][index-1] = !context.state.voices[voiceId][index-1]
-      context.setState({ voices: context.state.voices })
+      context.setState({ 
+        voices:       context.state.voices,
+        customVoices: context.state.customVoices 
+      })
       console.log(context.state)
     }} />
   );

@@ -4,7 +4,6 @@ import { useContext } from 'react'
 const AddVoice = () => {
   
   const context = useContext(Context)
-  console.log(context)
   const handleSubmit = (e) => {
 
     let newVoice = []

@@ -37,13 +37,13 @@ const Matrix = () => {
 
     if (context.state.customVoices) {
       let customVoices = context.state.customVoices.map((voice, i) => {
-
         let voiceId = i
+        let key = i + context.state.voices.length
 
         return (
-          <div key={voiceId}>
+          <div key={key}>
             <CustomVoice
-              key={voiceId}
+              key={key}
               voiceId={voiceId}
               boxes={voice}
             />
