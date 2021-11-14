@@ -35,9 +35,11 @@ const Matrix = () => {
       )
     })
 
-    if (context.state.customVoices) {
+    if (context && context.state && context.state.customVoices) {
       let customVoices = context.state.customVoices.map((voice, i) => {
+        
         let voiceId = i
+        
         let key = i + context.state.voices.length
 
         return (

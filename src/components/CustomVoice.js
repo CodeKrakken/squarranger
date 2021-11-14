@@ -6,8 +6,8 @@ const CustomVoice = ({voiceId}) => {
 
   const context = useContext(Context)
 
-  if (context && context.state && context.state.customVoices && context.state.customVoices[voiceId]) {
-    return context.state.customVoices[voiceId].map((box, i) => {
+  return context && context.state && context.state.customVoices && context.state.customVoices[voiceId] ? (
+    context.state.customVoices[voiceId].map((box, i) => {
 
       let id = i+1
       return (
@@ -18,10 +18,8 @@ const CustomVoice = ({voiceId}) => {
           voiceId={voiceId}
         />
       )
-    }) 
-    + 
-    (<div>Custom Voice</div>)
-  }
+    }
+  )) : ''
 }
 
  

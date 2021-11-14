@@ -17,7 +17,7 @@ const AddVoice = () => {
       voices:       context.state.voices,
       customVoices: context.state.customVoices 
     })
-    console.log('Set state')
+    console.log(context)
   }
   
   return context ? ( 

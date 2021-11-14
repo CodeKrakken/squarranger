@@ -13,9 +13,8 @@ const Box = ({checkStatus, index, voiceId}) => {
         voices:       context.state.voices,
         customVoices: context.state.customVoices 
       })
-      console.log(context.state)
     }} />
   );
 }
- 
+
 export default Box;
