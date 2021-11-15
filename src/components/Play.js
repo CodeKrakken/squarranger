@@ -6,15 +6,12 @@ const Play = () => {
 
   const context = useContext(Context)
   // const state.voices = context.state.voices
-  const [playKick] = useSound(context.state.soundBank.kick);
-  const [playSnare] = useSound(context.state.soundBank.snare);
+  const [play0] = useSound(context.state.soundBank[0]);
+  const [play1] = useSound(context.state.soundBank[1]);
 
   const play = (state, i=0) => {
 
-    console.log(state)
-
     for (let voice in state.voices) {voice = +voice
-
       if (state.voices[voice][i]) { 
         playVoice(state, voice)
       }
@@ -29,9 +26,10 @@ const Play = () => {
   }
 
   const playVoice = (state, i) => {
+
     if (i < state.soundBank.length) {
-      let voices = state.soundBank
-      voices[i]()
+      if (state.sounds[i] === 0) { play0() }
+      if (state.sounds[i] === 1) { play1() }
     }
   }
 

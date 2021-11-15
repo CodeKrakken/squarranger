@@ -14,7 +14,8 @@ const Matrix = () => {
         let status = Math.round(Math.random())
         voiceData.push(status)
       }
-      let sound = Math.floor(Math.random() * context.state.soundBank.length-1)
+      let sound = Math.round(Math.random() * (context.state.soundBank.length-1))
+      console.log(sound)
       context.state.voices.push(voiceData)
       context.state.sounds.push(sound)
     }
