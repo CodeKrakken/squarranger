@@ -26,11 +26,9 @@ const Play = () => {
   }
 
   const playVoice = (state, i) => {
-
-    if (i < state.soundBank.length) {
-      if (state.sounds[i] === 0) { play0() }
-      if (state.sounds[i] === 1) { play1() }
-    }
+    console.log(state)
+    if (state.sounds[i] === 0) { play0() }
+    if (state.sounds[i] === 1) { play1() }
   }
 
   const handleClick = (e) => {

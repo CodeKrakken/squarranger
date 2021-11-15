@@ -13,8 +13,9 @@ const AddVoice = () => {
     }
 
     context.state.voices.push(newVoice)
+    let sound = Math.round(Math.random() * (context.state.soundBank.length-1))
+    context.state.sounds.push(sound)
     context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
-
   }
   
   return context ? ( 
