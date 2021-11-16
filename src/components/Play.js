@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Context } from '../contexts/Context'
-import useSound from 'use-sound';
+import useSound from '../hooks/useSound';
 
 const Play = () => {
 
@@ -27,8 +27,7 @@ const Play = () => {
 
   const playVoice = (state, i) => {
     console.log(state)
-    if (state.sounds[i] === 0) { play0() }
-    if (state.sounds[i] === 1) { play1() }
+    useSound(state.soundBank[state.sounds[i]])
   }
 
   const handleClick = (e) => {
