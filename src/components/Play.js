@@ -1,13 +1,13 @@
+import Event from "./Event"
 import { useContext } from "react";
 import { Context } from '../contexts/Context'
-import useSound from '../hooks/useSound';
 
 const Play = () => {
 
   const context = useContext(Context)
   // const state.voices = context.state.voices
-  const [play0] = useSound(context.state.soundBank[0]);
-  const [play1] = useSound(context.state.soundBank[1]);
+  // const [play0] = useSound(context.state.soundBank[0]);
+  // const [play1] = useSound(context.state.soundBank[1]);
 
   const play = (state, i=0) => {
 
@@ -27,7 +27,9 @@ const Play = () => {
 
   const playVoice = (state, i) => {
     console.log(state)
-    useSound(state.soundBank[state.sounds[i]])
+    return (
+      <Event sound={state.soundBank[state.sounds[i]]} />
+    )
   }
 
   const handleClick = (e) => {
