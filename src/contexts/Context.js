@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { useState } from 'react'
-import kick from '../sounds/kick.mp3';
-import snare from '../sounds/snare.mp3'
+import kick from '../sounds/kick.wav';
+import snare from '../sounds/snare.wav'
 
 export const Context = createContext()
 
