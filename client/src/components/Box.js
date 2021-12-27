@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { Context } from '../contexts/Context'
+import React from 'react';
+
 
 const Box = ({checkStatus, index, voiceId}) => {
 

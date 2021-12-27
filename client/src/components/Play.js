@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from '../contexts/Context'
 import useSound from 'use-sound';
+import React from 'react';
 
 const Play = () => {
 

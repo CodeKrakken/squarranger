@@ -1,6 +1,7 @@
 import Box from "./Box";
 import { useContext } from "react";
 import { Context } from '../contexts/Context'
+import React from 'react';
 
 const Voice = ({voiceId}) => {
 

@@ -1,5 +1,7 @@
 import { Context } from '../contexts/Context'
-import { useContext } from 'react' 
+import { useContext } from 'react'
+import React from 'react';
+
 
 const AddVoice = () => {
   

@@ -2,6 +2,8 @@ import Voice from "./Voice"
 import { useContext, useEffect } from "react"
 import { Context } from '../contexts/Context'
 import AddSample from "./AddSample"
+import React from 'react';
+
 
 const Matrix = () => {
   
