@@ -7,20 +7,27 @@ const Voice = ({voiceId}) => {
 
   const context = useContext(Context)
 
-  return context && context.state && context.state.voices && context.state.voices[voiceId] ? (
-    context.state.voices[voiceId].map((box, i) => {
+  return context && context.state && context.state.voices && context.state.voices[voiceId] ? <>
+    {
+      context.state.voices[voiceId].map((box, i) => {
 
-      let id = i+1
-      return (
-        <Box
-          key={id}
-          index={id}
-          checkStatus={box}
-          voiceId={voiceId}
-        />
-      )
+        let id = i+1
+        return (
+          <Box
+            key={id}
+            index={[id]}
+            checkStatus={box}
+            voiceId={voiceId}
+          />
+        )
+      })
     }
-  )) : ''
+    <Box
+      index={[...Array(context.state.voices[voiceId].length).keys()]}
+      checkStatus={true}
+      voiceId={voiceId}
+    />
+  </> : ''
 }
  
 export default Voice;
