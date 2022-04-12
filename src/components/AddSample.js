@@ -16,8 +16,8 @@ const AddSample = () => {
 	};
 
   return (
-    <div style={{display: 'inline', overflow: 'hidden'}}>
-      <input type="file" name="file" onChange={changeHandler} />
+    <div style={{display: 'inline' }}>
+      <input style={{ border: "1px thin dotted white", maxWidth: "10%" }} type="file" name="file" onChange={changeHandler} />
     </div>
   );
 }
