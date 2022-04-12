@@ -24,13 +24,11 @@ const Matrix = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
      
-      Object.keys(context.state).map(key => {
-        sessionStorage[key] = context.state[key]
-      })
+      sessionStorage = context
     } else {
       console.log('reading')
       console.log(sessionStorage)
-      context.setState({ voices: sessionStorage.voices, sounds: sessionStorage.sounds, soundBank: sessionStorage.soundBank })
+      context.setState({ voices: sessionStorage.voices.split(','), sounds: sessionStorage.sounds.split(','), soundBank: sessionStorage.soundBank.split(',') })
     }
 
 

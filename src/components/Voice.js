@@ -9,6 +9,7 @@ const Voice = ({voiceId}) => {
 
   return context && context.state && context.state.voices && context.state.voices[voiceId] ? <>
     {
+      console.log(context.state.voices) &&
       context.state.voices[voiceId].map((box, i) => {
 
         let id = i+1
