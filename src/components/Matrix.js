@@ -9,19 +9,27 @@ const Matrix = () => {
   const context = useContext(Context)
 
   useEffect(() => {
-    for (let voice = 0; voice < 2; voice++) {
-      let voiceData = []
-      for (let beat = 0; beat < 16; beat++) {
-        let status = Math.round(Math.random())
-        voiceData.push(status)
+    if (sessionStorage.context === 'undefined') {
+
+      for (let voice = 0; voice < 2; voice++) {
+        let voiceData = []
+        for (let beat = 0; beat < 16; beat++) {
+          let status = Math.round(Math.random())
+          voiceData.push(status)
+        }
+        let sound = Math.round(Math.random() * (context.state.soundBank.length-1))
+        console.log(sound)
+        context.state.voices.push(voiceData)
+        context.state.sounds.push(sound)
       }
-      let sound = Math.round(Math.random() * (context.state.soundBank.length-1))
-      console.log(sound)
-      context.state.voices.push(voiceData)
-      context.state.sounds.push(sound)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
+      sessionStorage.context = context
+    } else {
+      console.log(sessionStorage.context)
+      context.setState({ voices: sessionStorage.context.state.voices, sounds: sessionStorage.context.state.sounds, soundBank: sessionStorage.context.state.soundBank })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
+
 
   }, [])
     
