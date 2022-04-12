@@ -9,8 +9,8 @@ const Matrix = () => {
   const context = useContext(Context)
 
   useEffect(() => {
-    if (sessionStorage.context === 'undefined') {
-
+    if (typeof sessionStorage.state === 'undefined') {
+      console.log('creating')
       for (let voice = 0; voice < 2; voice++) {
         let voiceData = []
         for (let beat = 0; beat < 16; beat++) {
@@ -18,22 +18,26 @@ const Matrix = () => {
           voiceData.push(status)
         }
         let sound = Math.round(Math.random() * (context.state.soundBank.length-1))
-        console.log(sound)
         context.state.voices.push(voiceData)
         context.state.sounds.push(sound)
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
       context.setState({ voices: context.state.voices, sounds: context.state.sounds, soundBank: context.state.soundBank })
-      sessionStorage.context = context
+     
+      Object.keys(context.state).map(key => {
+        sessionStorage[key] = context.state[key]
+      })
     } else {
-      console.log(sessionStorage.context)
-      context.setState({ voices: sessionStorage.context.state.voices, sounds: sessionStorage.context.state.sounds, soundBank: sessionStorage.context.state.soundBank })
+      console.log('reading')
+      console.log(sessionStorage)
+      context.setState({ voices: sessionStorage.voices, sounds: sessionStorage.sounds, soundBank: sessionStorage.soundBank })
     }
 
 
   }, [])
     
   if (context && context.state && context.state.voices) {
+    console.log(context.state)
     let voices = context.state.voices.map((voice, i) => {
 
       let voiceId = i
