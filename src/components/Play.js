@@ -27,7 +27,6 @@ const Play = () => {
   }
 
   const playVoice = (state, i) => {
-    console.log(state)
     if (state.sounds[i] === 0) { play0() }
     if (state.sounds[i] === 1) { play1() }
   }

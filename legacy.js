@@ -14,7 +14,6 @@ const Play = () => {
 
     for (let voice = 0; voice < beats.length; voice++) {
       if (beats[voice][beat]) { 
-        console.log(`Playing ${voice}`)
         playKick()
       }
     }
@@ -28,7 +27,6 @@ const Play = () => {
   }
 
   const handleClick = (e) => {
-    console.log('Playing')
     play(context.state.boxes)
   }
 

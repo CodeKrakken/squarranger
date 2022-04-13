@@ -9,14 +9,13 @@ const Matrix = () => {
   const context = useContext(Context)
 
   useEffect(() => {
-    for (let voice = 0; voice < 2; voice++) {
+    for (let voice = 0; voice < 1; voice++) {
       let voiceData = []
-      for (let beat = 0; beat < 16; beat++) {
+      for (let beat = 0; beat < 2; beat++) {
         let status = Math.round(Math.random())
         voiceData.push(status)
       }
       let sound = Math.round(Math.random() * (context.state.soundBank.length-1))
-      console.log(sound)
       context.state.voices.push(voiceData)
       context.state.sounds.push(sound)
     }

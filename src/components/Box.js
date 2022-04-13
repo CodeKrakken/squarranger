@@ -10,8 +10,10 @@ const Box = ({checkStatus, indexArray, voiceId}) => {
     <input type="checkbox" defaultChecked={checkStatus} onChange={e => {
 
       indexArray.map(index => {
-
-        context.state.voices[voiceId][index-1] = !context.state.voices[voiceId][index-1]
+        console.log(index)
+        console.log(context.state.voices[voiceId][index])
+        context.state.voices[voiceId][index] = checkStatus === true ? 1 : 0
+        checkStatus = !checkStatus
 
       })
 

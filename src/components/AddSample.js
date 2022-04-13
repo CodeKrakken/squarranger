@@ -7,7 +7,6 @@ const AddSample = () => {
 
   const context = useContext(Context)
 
-  console.log(context)
   const changeHandler = (event) => {
 
 		context.state.soundBank.push(event.target.files[0]);
